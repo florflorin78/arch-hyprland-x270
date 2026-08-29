@@ -11,3 +11,14 @@ verifica_internet() {
 }
 
 verifica_internet
+
+verifica_uefi() {
+    if [ -d /sys/firmware/efi ]; then
+        echo "Sistemul este pe UEFI."
+    else
+        echo "Sistemul nu este pe UEFI."
+        exit 1
+    fi
+}
+
+verifica_uefi
